@@ -6,7 +6,10 @@ def calculate_initial_lift(num_panels):
     # 1. INITIAL LIFT GENERATION
 
     """Provides the initial aerodynamic lift array (simulating VLM output)."""
-    return np.ones(num_panels)*500.0
+    
+    # Using pure Python lists instead of aerosandbox.numpy to prevent CasADi leakage
+    return [500.0] * num_panels
+
 
 def optimize_and_render_wing():
     # 2. INITIALIZE OPTIMIZATION ENVIRONMENT

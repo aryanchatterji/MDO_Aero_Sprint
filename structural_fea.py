@@ -83,10 +83,16 @@ def plot_deformation(displacement_vector, num_nodes, L=1.5):
     plt.plot(node_positions_x, scaled_displacements_y, 'b-o', linewidth=2, label=f'Deformed Shape (Scaled {scale_factor:.0e}x)')
 
     # Chart Formatting
-    
+
     plt.title("Structural FEA Simulation: Linear Elastic Cantilever Deflection")
     plt.xlabel("Position Along Wing Span (meters)")
     plt.ylabel(f"Exaggerated Bending (Scaled meters)")
     plt.legend()
     plt.grid(True)  # Added measuring grid
     plt.show()
+
+ # --- NON-BLOCKING UI RENDER ---
+    # Tells Python to draw the UI but NOT freeze the system
+    plt.show(block=False)
+    # Gives the OS half a second to actually paint the window on your screen before moving on
+    plt.pause(0.5)
