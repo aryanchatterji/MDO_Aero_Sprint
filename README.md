@@ -35,4 +35,4 @@ The framework is highly modular, separating the underlying physics engines into 
 *   **Libraries:** NumPy (Matrix Operations), Matplotlib (Data Visualization), AeroSandbox (Fluid Optimization & 3D Rendering), Multiprocessing (Parallel CPU Execution).
 
 ---
-*Note: This repository is maintained as a public portfolio for computational physics research and aerospace engineering development.*
+*Note: This repository is maintained as a public portfolio of computational physics research and aerospace engineering development.*
