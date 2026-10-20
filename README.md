@@ -5,6 +5,19 @@ This repository contains a custom-built Multidisciplinary Design Optimization (M
 
 Crucially, this architecture deprecates static CAD exports (e.g., `.stl` files) in favor of a fully dynamic, programmatic physics engine. The geometry, structural matrix, and fluid-structure interactions are calculated and visualized in real-time purely through mathematics.
 
+## Execution Instructions (How to Run)
+
+**CRITICAL: Do not execute the component physics modules (`structural_fea.py` or `wing_optimizer.py`) individually.** 
+
+To execute the complete multidisciplinary aerostructural pipeline and generate the geometry, you must run the master controller file:
+
+`python aero_struct_bridge.py`
+
+**What to expect upon execution:**
+This master file utilizes Python's `multiprocessing` library to safely allocate the parallel physics engines across different CPU cores. Running this script will simultaneously:
+1. Spawn the 2D structural FEA deformation graph (via Matplotlib)[cite: 8, 10].
+2. Process the aerodynamic VLM constraints and launch the fully interactive 3D aerostructural model (via AeroSandbox)[cite: 8, 11].
+
 ## Core Architecture
 
 The framework is highly modular, separating the underlying physics engines into distinct sub-systems before linking them via a mathematical coupling matrix.
